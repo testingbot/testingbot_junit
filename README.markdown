@@ -9,7 +9,7 @@ Download our TestingBot-x-x-x.jar or use the source files in the com directory.
 You also need JUnit (https://github.com/KentBeck/junit/downloads) and the Selenium Java Client Driver (http://release.seleniumhq.org/selenium-remote-control/1.0.1/).
 
 Once you have these 3 jars, set your CLASSPATH to point to them:
-    CLASSPATH=junit-4.9b4.jar:TestingBot-0.0.1.jar:testingbot/test/:selenium-java-client-driver.jar
+  CLASSPATH=junit-4.9b4.jar:TestingBot-0.0.1.jar:testingbot/test/:selenium-java-client-driver.jar
 
 Next, you need to make sure you have the file ~/.testingbot which stores your API key and API secret in this format: API_KEY:API_SECRET
 
@@ -24,30 +24,30 @@ In our repository you will find a test script which you can run by executing:
 Example
 -------
 
-    import com.thoughtworks.selenium.*;
-    import org.junit.*;
-    import com.testingbot.*;
+ import com.thoughtworks.selenium.*;
+ import org.junit.*;
+ import com.testingbot.*;
 
 
-    public class TestGoogle extends TestingBotTestCase {
-      public void setUp() throws Exception {
-        TestingBotSelenium selenium = new TestingBotSelenium(
-                "hub.testingbot.com",
-                4444,
-                "*safari",
-                "http://www.google.com/");
-        selenium.start();
-        this.selenium = selenium;
-      }
-      public void testGoogle() throws Exception {
-        this.selenium.open("/");
-        assertEquals("Google", this.selenium.getTitle());
-      }
-    
-     public void tearDown() throws Exception {
-        this.selenium.stop();
-     }
+ public class TestGoogle extends TestingBotTestCase {
+   public void setUp() throws Exception {
+     TestingBotSelenium selenium = new TestingBotSelenium(
+             "hub.testingbot.com",
+             4444,
+             "*safari",
+             "http://www.google.com/");
+     selenium.start();
+     this.selenium = selenium;
    }
+   public void testGoogle() throws Exception {
+     this.selenium.open("/");
+     assertEquals("Google", this.selenium.getTitle());
+   }
+ 
+   public void tearDown() throws Exception {
+     this.selenium.stop();
+   }
+ }
         
 Copyright
 ---------
