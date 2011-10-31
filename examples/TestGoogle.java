@@ -8,9 +8,9 @@ public class TestGoogle extends TestingBotTestCase {
         TestingBotSelenium selenium = new TestingBotSelenium(
                 "hub.testingbot.com",
                 4444,
-                "*safari",
+                "firefox",
                 "http://www.google.com/");
-        selenium.start();
+        selenium.start("version=6;platform=WINDOWS;screenrecorder=true;screenshot=false");
         this.selenium = selenium;
     }
     public void testGoogle() throws Exception {
