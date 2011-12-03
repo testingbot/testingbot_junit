@@ -38,7 +38,7 @@ Example
                 4444,
                 "firefox",
                 "http://www.google.com/");
-        selenium.start("version=6;platform=WINDOWS;screenrecorder=true;screenshot=false");
+        selenium.start("version=6;platform=WINDOWS;screenshot=false");
         this.selenium = selenium;
       }
       public void testGoogle() throws Exception {

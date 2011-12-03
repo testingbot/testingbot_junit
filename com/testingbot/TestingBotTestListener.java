@@ -100,7 +100,7 @@ public class TestingBotTestListener implements TestListener {
             }
 
             // Send data
-            URL url = new URL("http://api.testingbot.com/hq");
+            URL url = new URL("http://testingbot.com/hq");
             URLConnection conn = null;
             try {
                 conn = url.openConnection();
