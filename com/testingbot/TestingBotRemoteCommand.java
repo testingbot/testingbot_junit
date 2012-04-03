@@ -24,8 +24,11 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.openqa.selenium.net.Urls;
 
 /**
  *
@@ -58,7 +61,6 @@ public class TestingBotRemoteCommand extends DefaultRemoteCommand
         }
         String data = new String(buffer);
         String[] tokens = data.split(":");
-        
         return tokens;
     }
 
@@ -83,4 +85,12 @@ public class TestingBotRemoteCommand extends DefaultRemoteCommand
         }
         return sb.toString();
     }
+   
+     public static String urlEncode(String value) {
+        try {
+          return URLEncoder.encode(value, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+          return "";
+        }
+      }
 }

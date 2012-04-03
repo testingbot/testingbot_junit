@@ -1,5 +1,5 @@
 TestingBot.com JUnit package to use our Selenium Grid.
-You can find more info on http://www.testingbot.com
+You can find more info on http://testingbot.com
 
 Install
 -------
@@ -10,7 +10,7 @@ You also need JUnit (https://github.com/KentBeck/junit/downloads) and the Seleni
 
 Once you have these 3 jars, set your CLASSPATH to point to them:
 
-    CLASSPATH=junit-4.9b4.jar:TestingBot-0.0.1.jar:testingbot/test/:selenium-java-client-driver.jar
+    CLASSPATH=junit-4.10.jar:TestingBot-0.0.1.jar:testingbot/test/:selenium-java-client-driver.jar
 
 Next, you need to make sure you have the file ~/.testingbot which stores your API key and API secret in this format: API_KEY:API_SECRET
 
@@ -38,7 +38,7 @@ Example
                 4444,
                 "firefox",
                 "http://www.google.com/");
-        selenium.start("version=6;platform=WINDOWS;screenshot=false");
+        selenium.start("version=10;platform=WINDOWS;screenshot=false");
         this.selenium = selenium;
       }
       public void testGoogle() throws Exception {

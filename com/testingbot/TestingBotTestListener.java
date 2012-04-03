@@ -66,6 +66,7 @@ public class TestingBotTestListener implements TestListener {
                 if (f != null) try { f.close(); } catch (IOException ignored) { }
             }
             String data = new String(buffer);
+            
             String[] tokens = data.split(":");
 
             return tokens;
@@ -93,11 +94,7 @@ public class TestingBotTestListener implements TestListener {
                 return;
             }
         
-            try {
-                data = "client_key=" + tokens[0] + "&client_secret=" + tokens[1] + "&kind=4&success=" + success + "&session_id=" + URLEncoder.encode(processor.getSessionId(), "UTF-8") + "&name=" + URLEncoder.encode(test.getName(), "UTF-8") + "&status_message=" + URLEncoder.encode(sb.toString(), "UTF-8");
-            } catch (UnsupportedEncodingException ex) {
-                Logger.getLogger(TestingBotTestListener.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            data = "client_key=" + tokens[0] + "&client_secret=" + tokens[1] + "&kind=4&success=" + success + "&session_id=" + URLEncoder.encode(processor.getSessionId(), "UTF-8") + "&name=" + URLEncoder.encode(test.getName(), "UTF-8") + "&status_message=" + URLEncoder.encode(sb.toString(), "UTF-8");
 
             // Send data
             URL url = new URL("http://testingbot.com/hq");
