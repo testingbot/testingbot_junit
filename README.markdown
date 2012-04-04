@@ -14,7 +14,7 @@ Once you have these 3 jars, set your CLASSPATH to point to them:
 
 Next, you need to make sure you have the file ~/.testingbot which stores your API key and API secret in this format: API_KEY:API_SECRET
 
-You can get these keys by signing up on http://www.testingbot.com
+You can get these keys by signing up on http://testingbot.com
 
 You can now run your Selenium tests with Java.
 
@@ -50,9 +50,20 @@ Example
         this.selenium.stop();
       }
     }
-        
+
+Compile from Source
+-------------------
+
+To compile and test the Jar yourself you can use the following commands:
+    javac -cp .:com/testingbot/:`echo lib/* | tr ' ' ':'` com/testingbot/* && jar cvf lib/TestingBot-0.0.1.jar com/testingbot/*.class
+    javac -cp .:`echo lib/* | tr ' ' ':'` examples/*
+    cd examples/
+    java -cp .:`echo ../lib/* | tr ' ' ':'` com.testingbot.TestingBotTestRunner TestGoogle
+
+Where lib contains all the dependency jars listed above.
+
 Copyright
 ---------
 
-Copyright (c) 2011 TestingBot.com
+Copyright (c) 2012 TestingBot.com
 See LICENSE for more information.
