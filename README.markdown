@@ -55,6 +55,7 @@ Compile from Source
 -------------------
 
 To compile and test the Jar yourself you can use the following commands:
+
     javac -cp .:com/testingbot/:`echo lib/* | tr ' ' ':'` com/testingbot/* && jar cvf lib/TestingBot-0.0.1.jar com/testingbot/*.class
     javac -cp .:`echo lib/* | tr ' ' ':'` examples/*
     cd examples/
